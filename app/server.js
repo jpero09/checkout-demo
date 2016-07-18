@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
 app.use('/', router);
 
 
-http.createServer(app).listen(app.get('port'), app.get('host'), function() {
+http.createServer(app).listen(port, host, function() {
   // TODO: Replace with proper logger
   console.log('Starting: %s v%s', app.get('name'), app.get('version'));
   console.log('Running @ //%s:%s', app.get('host'), app.get('port'));
