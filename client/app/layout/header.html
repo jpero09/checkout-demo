@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse" data-ng-controller="header as vm">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand" data-ui-sref="{{vm.homeSref}}">
+                Checkout Demo
+            </a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li data-ng-repeat="state in vm.states"
+                    data-ng-class="{ active: vm.isSelected(state) }" data-ng-click="vm.selectState(state)" >
+                    <a href="#" data-ui-sref="{{state.sref}}" >{{state.name}}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <div class="btn-group cart-button">
+                    <a href="#" class="btn btn-warning" ui-sref="{{vm.cartSref}}">
+                        <i class="fa fa-shopping-cart"></i> Cart
+                    </a>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>

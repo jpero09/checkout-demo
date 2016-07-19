@@ -16,7 +16,7 @@ app.set('host', host);
 app.use(express.static(path.join(__dirname, '../client')));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
-app.use(morgan('tiny')); // Morgan Formats: combined, common, dev, short, tiny
+// app.use(morgan('tiny')); // Morgan Formats: combined, common, dev, short, tiny
 
 // Routes
 var router = express.Router();

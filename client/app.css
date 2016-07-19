@@ -1,30 +1,73 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.ng-cloak {
+  display: none;
 }
 
-.menu:before {
-  content: "[";
+.hand {
+  cursor:pointer
 }
 
-.menu:after {
-  content: "]";
+#shell-content {
+  margin-top: 20px
 }
 
-.menu > li {
-  display: inline;
+.cart-button {
+  margin-top: 8px;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+/* Add some air above the description */
+p.description {
+  margin-top: 10px;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+/* Ex: "These choices are all free" */
+p.optionMessage {
+  margin-bottom: 14px;
+  font-style: italic;
+}
+
+/* Narrow the spacing for the controls.  Bootstrap has margin-bottom: 20px */
+.form-horizontal .control-group {
+  margin-bottom: 10px;
+}
+
+/* Narrow the spacing between radio controls when they are in a table */
+td .radio {
+  min-height: 16px;
+  max-height: 16px;
+}
+
+tr.narrow td {
+  padding-top: 2px;
+  padding-bottom: 0px;
+}
+
+.tab-pane {
+  min-height: 6em;
+}
+
+/*** Bootstrap replacements ***/
+.navbar-fixed-top {
+  position:static; // keeps the top navbar from overlapping the content
+}
+/* put some horizontal space around the top nav and footer */
+.navbar {
+  border-radius: 0;
+}
+.navbar .navbar-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+  color: #DDDDDD;
+}
+.nav>li>a:focus,
+.nav>li>a:hover {
+  background-color: transparent;
+}
+.navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.navbar-inverse .nav .active > a:focus {
+  font-size: larger;
+  font-weight: bold;
 }

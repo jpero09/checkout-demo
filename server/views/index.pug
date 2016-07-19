@@ -1,4 +1,4 @@
-html(lang="en", ng-app="myApp")
+html(lang="en")
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -11,31 +11,34 @@ html(lang="en", ng-app="myApp")
     link(rel='dns-prefetch', href='//maxcdn.bootstrapcdn.com')
 
     link(rel="stylesheet"  href="//fonts.googleapis.com/css?family=Roboto")
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel="stylesheet", href="bower_components/html5-boilerplate/dist/css/normalize.css")
     link(rel="stylesheet", href="bower_components/html5-boilerplate/dist/css/main.css")
     link(rel="stylesheet", href="app.css")
 
     script(src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js")
-  body
-    ul.menu
-      li
-        a(href="#!/view1") view1
-      li
-        a(href="#!/view2") view2
 
-    div(ng-view)
+  body(ng-app="app")
+    div(data-ui-view="header")
+    div(id="shell-content", data-ui-view="content")
+    div(data-ui-view="footer")
 
-    script(src="bower_components/angular/angular.js")
-    script(src="bower_components/angular-route/angular-route.js")
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js')
+    script(src="bower_components/angular/angular.min.js")
+    script(src="bower_components/angular-sanitize/angular-sanitize.js")
+    script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+    script(src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js")
+    script(src="bower_components/jquery/dist/jquery.min.js")
+    script(src="bower_components/bootstrap/dist/js/bootstrap.min.js")
 
     script(src="app/app.js")
-    script(src="app/view1/view1.js")
-    script(src="app/view2/view2.js")
+    script(src="app/app.routes.js")
+
+    script(src="app/layout/header.js")
+    script(src="app/store/store.js")
+    script(src="app/checkout/checkout.js")
+
     script(src="app/components/version/version.js")
     script(src="app/components/version/version-directive.js")
     script(src="app/components/version/interpolate-filter.js")
