@@ -1,47 +1,22 @@
 (function(angular) {
   'use strict';
 
-  angular.module( "app" ).controller( 'menu',
-    ['$state', '$stateParams', 'dataservice', controller] );
+  angular.module( "app" ).controller('store',
+    ['$state', '$stateParams', controller] );
 
-  function controller($state, $stateParams, dataservice ) {
+  function controller($state, $stateParams) {
     var vm  = this;
-    dataservice.ready().then(onReady);
-
-    function onReady() {
-      var type = $stateParams.productType;
-      if (type){
-        var types = ['drink', 'pizza', 'salad'];
-        type = types[types.indexOf(type.toLowerCase())];
-      }
-      type = type || 'pizza';
-
-      vm.products = dataservice.lookups.products.byTag( type );
-      vm.productRef = productRef;
-      vm.go = go;
-      vm.template = 'app/menu/menu.' + type + '.html';
-    }
-    /////////////////////
-    /*
-     * An ng-click callback that uses $state to navigate
-     * the link url is not visible in the browser and must
-     * style the anchor tag with 'hand' for the cursor to indicate a clickable.
-     * See pizza.html for an example of this approach
-     */
-    function go(product) {
-      $state.go('app.order.product', {productType : product.type, productId: product.id});
-    }
-
-    // Generates a link that you can see in the browser
-    // See drink.html for an example of this approach
-    // Link: '#/menu/'+product.type+'/'+product.id;
-    function productRef(product) {
-      // bind this with href (or data-ng-href to be safe) because it produces a regular href
-      return $state.href('app.order.product', {productType : product.type, productId: product.id});
-
-      // bind this version with data-ui-sref because it produces a "state ref"
-      // return "app.order.product({productType: '" + product.type + "', productId: '" + product.id +"'})";
-    }
+    vm.products = [ // TODO: Move this to a service
+      {sku: 'A', price: 3.14, label: 'Pizza'},
+      {sku: 'B', price: 1.88, label: 'Pretzels'},
+      {sku: 'C', price: 0.50, label: 'Oranges'},
+      {sku: 'D', price: 0.60, label: 'Grapes'},
+      {sku: 'E', price: 1.19, label: 'Grape Soda'},
+      {sku: 'F', price: 1.19, label: 'Orange Soda'},
+      {sku: 'G', price: 2.99, label: 'Cheese'},
+      {sku: 'H', price: 1.99, label: 'Milk'},
+      {sku: 'I', price: 2.49, label: 'Eggs'}
+    ];
   }
 
 }( this.angular ));

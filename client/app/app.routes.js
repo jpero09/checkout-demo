@@ -50,9 +50,6 @@
             'content@' : {
               templateUrl: 'app/order/order.html'
             },
-            'orderSidebar@app.order' : {
-              templateUrl: 'app/order/orderSidebar.html'
-            },
             'content@app.order' : {
               // NOTE: Blank until filled by a more specific app.order state
             }
@@ -93,24 +90,17 @@
 
       .state( 'app.store',
         {
-          // This state shows the Product listings (pizzas, salads, drinks)
+          // This state shows the Product listings
           // from which a product can be selected; selection navigates to the
           // the produce details page.
           url: '/store/:productType',
           views : {
             'content@' : {
               templateUrl: 'app/store/store.html'
-            },
-            'orderSidebar@app.store' : {
-              templateUrl: 'app/order/orderSidebar.html'
             }
           }
         })
       ;
-
-    $urlRouterProvider
-      .when( '/store', '/store/pizza') // Switch to Pizza listing view
-      .otherwise('/store/pizza');       // Return to the main ordering screen
   }
 
 }( this.angular ));

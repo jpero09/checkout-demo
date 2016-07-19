@@ -1,1 +1,16 @@
-<p>This is the Store!</p>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div data-ng-controller="store as vm">
+      <table class="table table-condensed" style="font-size:small">
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+        <tr data-ng-repeat="item in vm.products">
+          <td>{{item.label}}</td>
+          <td>{{item.price | currency:"$"}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

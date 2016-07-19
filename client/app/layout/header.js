@@ -7,7 +7,7 @@
 
     var headerStates = [
       { name: 'Home', sref: 'app.home', roots: ['/home'] }
-      ,{ name: 'Store', sref: 'app.store({productType: \'pizza\'})', roots: ['/order','/store'] }
+      ,{ name: 'Store', sref: 'app.store', roots: ['/order','/store'] }
       ,{ name: 'About', sref: 'app.about', roots: ['/about']}
     ];
 
